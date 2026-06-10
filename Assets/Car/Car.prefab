@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49991d093fe04784683e5ff060ba7c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  friction: 2000
+  frictionCoef: 2
   fullFrictionSpeed: 0.2
   groundResetTime: 0.2
 --- !u!1 &1967264540995604946
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49991d093fe04784683e5ff060ba7c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  friction: 2000
+  frictionCoef: 2
   fullFrictionSpeed: 0.2
   groundResetTime: 0.2
 --- !u!1 &3546893715517174674
@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49991d093fe04784683e5ff060ba7c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  friction: 2000
+  frictionCoef: 2
   fullFrictionSpeed: 0.2
   groundResetTime: 0.2
 --- !u!1 &4879716752338515023
@@ -652,11 +652,6 @@ MonoBehaviour:
   slipBreakPoint: 0.01
   slipClamp: 0.015
   dontBreakSlip: 0
-  wheels:
-  - {fileID: 5526567102432553723}
-  - {fileID: 7760501842600962987}
-  - {fileID: 6751268166337506956}
-  - {fileID: 2089292718504767866}
   slip: 0
   slipBreakMult: 0
   slipBreakState: 0
@@ -670,7 +665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6413483087477645410}
-  - component: {fileID: 1926472374089029100}
+  - component: {fileID: 7581395148052435650}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -698,7 +693,7 @@ Transform:
   - {fileID: 2079409344614515089}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1926472374089029100
+--- !u!114 &7581395148052435650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -707,16 +702,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5188184256264910496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6db02b0f294716144b369fb38753e494, type: 3}
+  m_Script: {fileID: 11500000, guid: ead630acaaf748a498617b8992f499db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 8576640322346693716}
+  targetMass: 10000
   wheels:
-  - {fileID: 3714432127463065597}
-  - {fileID: 8484106018790023106}
-  - {fileID: 3637517224852836562}
-  - {fileID: 7303030795995997639}
-  totalMass: 1000
+  - {fileID: 5526567102432553723}
+  - {fileID: 2089292718504767866}
+  - {fileID: 7760501842600962987}
+  - {fileID: 6751268166337506956}
 --- !u!1 &5717622659471539352
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49991d093fe04784683e5ff060ba7c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  friction: 2000
+  frictionCoef: 2
   fullFrictionSpeed: 0.2
   groundResetTime: 0.2

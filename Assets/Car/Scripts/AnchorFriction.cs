@@ -15,10 +15,8 @@ public class AnchorFriction : MonoBehaviour
 
 
 
-	public Wheel[] wheels;
-
-
     private Rigidbody rb;
+	private MassSetup ms;
 
 	public float slip;
 	public float slipBreakMult;
@@ -26,22 +24,10 @@ public class AnchorFriction : MonoBehaviour
 	public float slipBreakState;
 	public float groundCountMult;
 
-
-
-	private float TotalMass
-	{
-		get
-		{
-			float totalMass = rb.mass;
-			foreach (Wheel wheel in wheels)
-				totalMass += wheel.Rb.mass;
-			return totalMass;
-		}
-	}
-
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody>();
+		ms = GetComponentInParent<MassSetup>();
 	}
 
 
@@ -50,8 +36,9 @@ public class AnchorFriction : MonoBehaviour
 
 		int groundCount = 0;
 
-		foreach (Wheel w in wheels)
+		foreach (Wheel w in ms.wheels)
 			groundCount += (w.IsGrounded ? 1 : 0);
+
 	
 		Vector3 localVel = transform.InverseTransformDirection(rb.velocity);
 
@@ -65,15 +52,15 @@ public class AnchorFriction : MonoBehaviour
 		slip = Mathf.Clamp(slip, -slipClamp, slipClamp);
 
 
-		float basicFriction = TotalMass * frictionCoef;
+		float basicFriction = ms.TotalMass * frictionCoef;
 		float frictionMult = -slip / slipClamp;
 
 
-		float basicDamp = TotalMass * dampCoef;
+		float basicDamp = ms.TotalMass * dampCoef;
 		float dampMult = -localVel.x;
 
 
-		groundCountMult = groundCount / wheels.Length;
+		groundCountMult = groundCount / ms.wheels.Length;
 		slipBreakState = Mathf.Clamp01(
 			Mathf.InverseLerp(
 				slipBreakPoint,

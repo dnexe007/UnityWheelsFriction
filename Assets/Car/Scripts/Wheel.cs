@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class Wheel : MonoBehaviour
 {
-	public float friction;
+	public float frictionCoef = 2;
 	public float fullFrictionSpeed = 0.1f;
 	public float groundResetTime = 0.02f;
 
 	public Rigidbody Rb { get; private set; }
+	private MassSetup ms;
 	public bool IsGrounded => Time.fixedTime - lastGroundTime <= groundResetTime;
 
 
@@ -16,6 +17,7 @@ public class Wheel : MonoBehaviour
 	private void Start()
 	{
 		Rb = GetComponent<Rigidbody>();
+		ms = GetComponentInParent<MassSetup>();
 	}
 
 
@@ -41,6 +43,6 @@ public class Wheel : MonoBehaviour
 
 		float frictionMult = Mathf.Lerp(0, 1, Mathf.Abs(localVel.y) / fullFrictionSpeed);
 
-		Rb.AddForce(-transform.up * friction * sidewaysDir * frictionMult);
+		Rb.AddForce(-transform.up * frictionCoef * ms.TotalMass * sidewaysDir * frictionMult);
 	}
 }
