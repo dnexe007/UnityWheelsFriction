@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Wheel : MonoBehaviour
 {
-	[SerializeField] private float frictionCoef = 2;
+	[SerializeField] private float sidewaysFrictionCoef = 2;
+	[SerializeField] private float forwardFrictionCoef = 0.1f;
 	[SerializeField] private float fullFrictionSpeed = 0.1f;
 	[SerializeField] private int contactsLength;
 
@@ -44,28 +45,29 @@ public class Wheel : MonoBehaviour
 		CurrentNormal = _normalData.CalculateAndReset();
 		IsGrounded = CurrentNormal != Vector3.zero;
 		
-		ApplyLinearFriction();
+		ApplyLinearFriction(-transform.up, sidewaysFrictionCoef);
+		ApplyLinearFriction(transform.forward, forwardFrictionCoef);
 	}
 
 
-	private void ApplyLinearFriction()
+	private void ApplyLinearFriction(Vector3 direction, float frictionCoef)
 	{
 		if (!IsGrounded) return;
 
-		Vector3 localVel = transform.InverseTransformDirection(Rb.velocity);
+		Vector3 sidewaysDir = Vector3.ProjectOnPlane(direction, CurrentNormal).normalized;
+		Vector3 slipVel = Vector3.Project(Rb.velocity, sidewaysDir);
 
-		float sidewaysDir = Mathf.Sign(localVel.y);
+		float basicFriction = frictionCoef * ms.TotalMass;
+		float speedFrictionMult = Mathf.Lerp(0, 1, slipVel.magnitude / fullFrictionSpeed);
 
-		float frictionMult = Mathf.Lerp(0, 1, Mathf.Abs(localVel.y) / fullFrictionSpeed);
-
-		Rb.AddForce(-transform.up * frictionCoef * ms.TotalMass * sidewaysDir * frictionMult);
+		Rb.AddForce(basicFriction * speedFrictionMult * -slipVel.normalized);
 	}
 
 	private void OnDrawGizmos()
 	{
+		if(!Application.isPlaying) return;
 		Gizmos.color = Color.red;
 
-		if(Application.isPlaying)
-			Gizmos.DrawLine(transform.position, transform.position + CurrentNormal * 2);
+		Gizmos.DrawLine(transform.position, transform.position + CurrentNormal);
 	}
 }

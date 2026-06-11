@@ -2506,6 +2506,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2089292718504767866, guid: 2db6026040007a249a068b8854d1e217, type: 3}
+      propertyPath: forwardFrictionCoef
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2260830602672171409, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -2529,6 +2533,10 @@ PrefabInstance:
     - target: {fileID: 5188184256264910496, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_Name
       value: Car1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5526567102432553723, guid: 2db6026040007a249a068b8854d1e217, type: 3}
+      propertyPath: forwardFrictionCoef
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6413483087477645410, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2569,6 +2577,14 @@ PrefabInstance:
     - target: {fileID: 6413483087477645410, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751268166337506956, guid: 2db6026040007a249a068b8854d1e217, type: 3}
+      propertyPath: forwardFrictionCoef
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760501842600962987, guid: 2db6026040007a249a068b8854d1e217, type: 3}
+      propertyPath: forwardFrictionCoef
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
