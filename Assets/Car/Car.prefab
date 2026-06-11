@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8083185998630634248}
   - component: {fileID: 3848510624623526455}
   - component: {fileID: 5639295700859032908}
-  - component: {fileID: 4165729513492023519}
   - component: {fileID: 3637517224852836562}
   - component: {fileID: 7760501842600962987}
   - component: {fileID: 1699701752462192336}
+  - component: {fileID: 4204702564471799938}
   m_Layer: 0
   m_Name: BR
   m_TagString: Untagged
@@ -87,29 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4165729513492023519
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1197407227959279273}
-  m_Material: {fileID: 13400000, guid: 2be362bb2abcac846a68fdac70a9f509, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!54 &3637517224852836562
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -151,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frictionCoef: 2
   fullFrictionSpeed: 0.2
-  groundResetTime: 0.2
+  contactsLength: 0
 --- !u!153 &1699701752462192336
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -254,6 +231,28 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!64 &4204702564471799938
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197407227959279273}
+  m_Material: {fileID: 13400000, guid: 2be362bb2abcac846a68fdac70a9f509, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1967264540995604946
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,10 +264,10 @@ GameObject:
   - component: {fileID: 195520953530586817}
   - component: {fileID: 534829455138264304}
   - component: {fileID: 9179928278276790546}
-  - component: {fileID: 6741764109093226729}
   - component: {fileID: 3714432127463065597}
   - component: {fileID: 5526567102432553723}
   - component: {fileID: 3406944397445424426}
+  - component: {fileID: 2383978906998936673}
   m_Layer: 0
   m_Name: FR
   m_TagString: Untagged
@@ -341,29 +340,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &6741764109093226729
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967264540995604946}
-  m_Material: {fileID: 13400000, guid: 2be362bb2abcac846a68fdac70a9f509, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!54 &3714432127463065597
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -405,7 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frictionCoef: 2
   fullFrictionSpeed: 0.2
-  groundResetTime: 0.2
+  contactsLength: 0
 --- !u!153 &3406944397445424426
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -508,6 +484,28 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!64 &2383978906998936673
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967264540995604946}
+  m_Material: {fileID: 13400000, guid: 2be362bb2abcac846a68fdac70a9f509, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &3546893715517174674
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,10 +517,10 @@ GameObject:
   - component: {fileID: 2260830602672171409}
   - component: {fileID: 1194541189035116162}
   - component: {fileID: 8491155580960083401}
-  - component: {fileID: 5316821563004406887}
   - component: {fileID: 8484106018790023106}
   - component: {fileID: 2089292718504767866}
   - component: {fileID: 7208532548344741957}
+  - component: {fileID: 4604790634040207515}
   m_Layer: 0
   m_Name: FL
   m_TagString: Untagged
@@ -595,29 +593,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5316821563004406887
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3546893715517174674}
-  m_Material: {fileID: 13400000, guid: 2be362bb2abcac846a68fdac70a9f509, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!54 &8484106018790023106
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -659,7 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frictionCoef: 2
   fullFrictionSpeed: 0.2
-  groundResetTime: 0.2
+  contactsLength: 0
 --- !u!153 &7208532548344741957
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -762,6 +737,28 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!64 &4604790634040207515
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3546893715517174674}
+  m_Material: {fileID: 13400000, guid: 2be362bb2abcac846a68fdac70a9f509, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &4879716752338515023
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,15 +905,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0ccc9840f56b934b9414e518ce7bceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frictionCoef: 10
-  dampCoef: 16
-  slipBreakPoint: 0.01
-  slipClamp: 0.015
+  frictionCoef: 5
+  dampCoef: 8
+  slipPeakSpeed: 0.06
+  slipBreakSpeed: 0.1
+  slipClamp: 0.04
   dontBreakSlip: 0
   slip: 0
   slipBreakMult: 0
   slipBreakState: 0
-  groundCountMult: 0
+  currentSidewaysSpeed: 0
 --- !u!1 &5188184256264910496
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,10 +981,10 @@ GameObject:
   - component: {fileID: 320815815869043870}
   - component: {fileID: 6949413699481867482}
   - component: {fileID: 3463923754365526453}
-  - component: {fileID: 2401026617482348360}
   - component: {fileID: 7303030795995997639}
   - component: {fileID: 6751268166337506956}
   - component: {fileID: 2408411055949063512}
+  - component: {fileID: 8567276293799591378}
   m_Layer: 0
   m_Name: BL
   m_TagString: Untagged
@@ -1059,29 +1057,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2401026617482348360
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5717622659471539352}
-  m_Material: {fileID: 13400000, guid: 2be362bb2abcac846a68fdac70a9f509, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!54 &7303030795995997639
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1123,7 +1098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frictionCoef: 2
   fullFrictionSpeed: 0.2
-  groundResetTime: 0.2
+  contactsLength: 0
 --- !u!153 &2408411055949063512
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -1226,3 +1201,25 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!64 &8567276293799591378
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5717622659471539352}
+  m_Material: {fileID: 13400000, guid: 2be362bb2abcac846a68fdac70a9f509, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
