@@ -126,9 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49991d093fe04784683e5ff060ba7c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frictionCoef: 2
-  fullFrictionSpeed: 0.2
-  contactsLength: 0
 --- !u!153 &1699701752462192336
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -379,9 +376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49991d093fe04784683e5ff060ba7c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frictionCoef: 2
-  fullFrictionSpeed: 0.2
-  contactsLength: 0
 --- !u!153 &3406944397445424426
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -632,9 +626,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49991d093fe04784683e5ff060ba7c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frictionCoef: 2
-  fullFrictionSpeed: 0.2
-  contactsLength: 0
 --- !u!153 &7208532548344741957
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -773,6 +764,7 @@ GameObject:
   - component: {fileID: 2159253357134986912}
   - component: {fileID: 8576640322346693716}
   - component: {fileID: 8929817170302073050}
+  - component: {fileID: 5003814345996635794}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -907,14 +899,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frictionCoef: 5
   dampCoef: 8
-  slipPeakSpeed: 0.06
-  slipBreakSpeed: 0.1
-  slipClamp: 0.04
-  dontBreakSlip: 0
-  slip: 0
-  slipBreakMult: 0
-  slipBreakState: 0
-  currentSidewaysSpeed: 0
+  frictionMultOverSlipSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.06
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  offsetClamp: 0.01
+  dontBreakFriction: 0
+--- !u!114 &5003814345996635794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4879716752338515023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 659d4fdd53f739c46a10484dd8174152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sidewaysFrictionCoef: 2
+  forwardFrictionCoef: 0.1
+  fullFrictionSpeed: 0.2
 --- !u!1 &5188184256264910496
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,11 +990,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetMass: 10000
-  wheels:
-  - {fileID: 5526567102432553723}
-  - {fileID: 2089292718504767866}
-  - {fileID: 7760501842600962987}
-  - {fileID: 6751268166337506956}
 --- !u!1 &5717622659471539352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,9 +1116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49991d093fe04784683e5ff060ba7c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frictionCoef: 2
-  fullFrictionSpeed: 0.2
-  contactsLength: 0
 --- !u!153 &2408411055949063512
 ConfigurableJoint:
   m_ObjectHideFlags: 0

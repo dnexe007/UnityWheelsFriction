@@ -996,18 +996,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.408
       objectReference: {fileID: 0}
-    - target: {fileID: 8929817170302073050, guid: 2db6026040007a249a068b8854d1e217, type: 3}
-      propertyPath: slipClamp
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 8929817170302073050, guid: 2db6026040007a249a068b8854d1e217, type: 3}
-      propertyPath: offsetClamp
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 8929817170302073050, guid: 2db6026040007a249a068b8854d1e217, type: 3}
-      propertyPath: dontBreakFriction
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
