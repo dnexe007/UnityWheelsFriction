@@ -9,12 +9,14 @@ public class AverageNormalData
 	public Vector3 CalculateNormal()
 	{
 		if (Count == 0) return Vector3.zero;
-		return normalSum / Count;
+		return (normalSum / Count).normalized;
 	}
 
-	public void Add(ContactPoint point)
+	public void Add(ContactPoint point) => Add(point.normal);
+
+	public void Add(Vector3 normal)
 	{
-		normalSum += point.normal;
+		normalSum += normal;
 		Count++;
 	}
 

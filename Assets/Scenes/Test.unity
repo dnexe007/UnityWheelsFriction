@@ -970,31 +970,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6413483087477645410, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98681426
+      value: 0.7632456
       objectReference: {fileID: 0}
     - target: {fileID: 6413483087477645410, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.053564616
+      value: -0.103083454
       objectReference: {fileID: 0}
     - target: {fileID: 6413483087477645410, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.109951824
+      value: -0.63509685
       objectReference: {fileID: 0}
     - target: {fileID: 6413483087477645410, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.106014304
+      value: -0.05900852
       objectReference: {fileID: 0}
     - target: {fileID: 6413483087477645410, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -7.414
+      value: -13.433
       objectReference: {fileID: 0}
     - target: {fileID: 6413483087477645410, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -11.969
+      value: -79.811
       objectReference: {fileID: 0}
     - target: {fileID: 6413483087477645410, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -11.485
+      value: 2.408
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929817170302073050, guid: 2db6026040007a249a068b8854d1e217, type: 3}
+      propertyPath: slipClamp
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929817170302073050, guid: 2db6026040007a249a068b8854d1e217, type: 3}
+      propertyPath: offsetClamp
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929817170302073050, guid: 2db6026040007a249a068b8854d1e217, type: 3}
+      propertyPath: dontBreakFriction
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
