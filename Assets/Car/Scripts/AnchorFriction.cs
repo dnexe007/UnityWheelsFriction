@@ -16,12 +16,15 @@ public class AnchorFriction : MonoBehaviour
 	private static readonly AverageNormalData avgNormal = new();
 
 	private Configuration config;
+	private LinearFriction linearFriction;
 	
 	private float sidewaysOffset;
+	private float forwardOffset;
 
 	private void Start()
 	{
 		config = GetComponentInParent<Configuration>();
+		linearFriction = GetComponent<LinearFriction>();
 	}
 
 	private Vector3 GetAverageGroundNormal()
@@ -55,7 +58,17 @@ public class AnchorFriction : MonoBehaviour
 	private void ApplyAnchorFriction(Vector3 axis, Vector3 normal, ref float offset)
 	{
 		Vector3 axisVector = Vector3.ProjectOnPlane(axis, normal).normalized;
-		Vector3 axisVelocity = Vector3.Project(config.RootRigidbody.velocity, axisVector);
+
+		Vector3 avgVelocity = Vector3.zero;
+		int wheelsOnGround = 0;
+		foreach (Wheel w in config.Wheels) if (w.IsGrounded)
+		{
+			wheelsOnGround++;
+			avgVelocity += w.Rb.velocity;
+		}
+		avgVelocity /= wheelsOnGround;
+
+		Vector3 axisVelocity = Vector3.Project(avgVelocity, axisVector);
 
 		float velocityDirection = Vector3.Dot(axisVector, axisVelocity) > 0 ? 1 : -1;
 		offset += axisVelocity.magnitude * velocityDirection * Time.fixedDeltaTime;
@@ -81,5 +94,7 @@ public class AnchorFriction : MonoBehaviour
 		if (normal == Vector3.zero) return;
 
 		ApplyAnchorFriction(GetAverageRight(), normal, ref sidewaysOffset);
+		if(linearFriction.IsBrakeEnabled)
+			ApplyAnchorFriction(GetAverageForward(), normal, ref forwardOffset);
 	}
 }

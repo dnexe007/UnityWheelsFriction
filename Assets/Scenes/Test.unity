@@ -952,6 +952,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5003814345996635794, guid: 2db6026040007a249a068b8854d1e217, type: 3}
+      propertyPath: brakeFrictionCoef
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5003814345996635794, guid: 2db6026040007a249a068b8854d1e217, type: 3}
+      propertyPath: forwardFrictionCoef
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5188184256264910496, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_Name
       value: Car1
@@ -995,6 +1003,10 @@ PrefabInstance:
     - target: {fileID: 6413483087477645410, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.408
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929817170302073050, guid: 2db6026040007a249a068b8854d1e217, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1793,7 +1805,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.29376844, y: 0.6431952, z: -0.29376844, w: 0.6431952}
-  m_LocalPosition: {x: -11, y: 8, z: 0}
+  m_LocalPosition: {x: 4, y: 4, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1931,6 +1943,10 @@ PrefabInstance:
     - target: {fileID: 5188184256264910496, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_Name
       value: Car2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5188184256264910496, guid: 2db6026040007a249a068b8854d1e217, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6413483087477645410, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2533,6 +2549,10 @@ PrefabInstance:
     - target: {fileID: 5188184256264910496, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_Name
       value: Car1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5188184256264910496, guid: 2db6026040007a249a068b8854d1e217, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5526567102432553723, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: forwardFrictionCoef
@@ -3874,6 +3894,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car3
       objectReference: {fileID: 0}
+    - target: {fileID: 5188184256264910496, guid: 2db6026040007a249a068b8854d1e217, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6413483087477645410, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.1549625
@@ -4124,6 +4148,10 @@ PrefabInstance:
     - target: {fileID: 5188184256264910496, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_Name
       value: Car4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5188184256264910496, guid: 2db6026040007a249a068b8854d1e217, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6413483087477645410, guid: 2db6026040007a249a068b8854d1e217, type: 3}
       propertyPath: m_LocalPosition.x
