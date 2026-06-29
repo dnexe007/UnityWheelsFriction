@@ -36,7 +36,7 @@ public class AnchorFriction : MonoBehaviour
 
 	private Vector3 GetAverageRight()
 	{
-		Vector3 result = GetAverageNormal(w => -w.transform.up);
+		Vector3 result = GetAverageNormal(w => w.transform.right);
 		Debug.DrawRay(transform.position, result, Color.red);
 		return result;
 	}
@@ -70,7 +70,7 @@ public class AnchorFriction : MonoBehaviour
 
 		Vector3 axisVelocity = Vector3.Project(avgVelocity, axisVector);
 
-		float velocityDirection = Vector3.Dot(axisVector, axisVelocity) > 0 ? 1 : -1;
+		float velocityDirection = Mathf.Sign(Vector3.Dot(axisVector, axisVelocity));
 		offset += axisVelocity.magnitude * velocityDirection * Time.fixedDeltaTime;
 		offset = Mathf.Clamp(offset, -offsetClamp, offsetClamp);
 

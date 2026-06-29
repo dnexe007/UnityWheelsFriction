@@ -21,7 +21,7 @@ public class LinearFriction : MonoBehaviour
 	{
 		foreach (Wheel w in config.Wheels) if (w.IsGrounded)
 		{
-			ApplyLinearFriction(w, -w.transform.up, sidewaysFrictionCoef);
+			ApplyLinearFriction(w, w.transform.right, sidewaysFrictionCoef);
 			if(IsBrakeEnabled)
 				ApplyLinearFriction(w, w.transform.forward, brakeFrictionCoef);
 		}
